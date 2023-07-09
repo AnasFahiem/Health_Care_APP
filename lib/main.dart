@@ -1,4 +1,4 @@
-import 'package:fittech_app/screeens/Login_screen.dart';
+import 'package:fittech_app/screeens/login_screen.dart';
 import 'package:fittech_app/screeens/home_bage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

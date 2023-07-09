@@ -4,47 +4,40 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   const AppBarWidget(
-      {super.key, required this.name, required this.scaffoldKey});
-  Size get preferredSize => const Size.fromHeight(60.0);
+      {super.key,
+      required this.name,
+      required this.scaffoldKey,
+      required this.image});
+  Size get preferredSize => const Size.fromHeight(50);
+  final String image;
   final String name;
   final GlobalKey<ScaffoldState> scaffoldKey;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // IconButton(
-            //   onPressed: () {
-            //     scaffoldKey.currentState!.openDrawer();
-            //   },
-            //   icon: Icon(FontAwesomeIcons.faceGrinBeamSweat),
-            //   color: Colors.black,
-            // ),
-            GestureDetector(
-              onTap: () {
-                scaffoldKey.currentState!.openDrawer();
-              },
-              child: const CircleAvatar(
-                backgroundColor: Colors.teal,
-                backgroundImage: AssetImage("assets/person5.png"),
-              ),
+      centerTitle: false,
+      title: Padding(
+        padding: const EdgeInsets.only(bottom: 20),
+        child: Text(
+          name,
+          style: GoogleFonts.roboto(
+            textStyle: const TextStyle(
+              color: Colors.white,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
             ),
-            const SizedBox(
-              width: 10,
-            ),
-            Text(
-              name,
-              style: TextStyle(
-                color: Colors.white70,
-                fontWeight: FontWeight.bold,
-                fontFamily: GoogleFonts.antic().fontFamily,
-              ),
-            ),
-          ],
+          ),
+        ),
+      ),
+      leading: GestureDetector(
+        onTap: () {
+          scaffoldKey.currentState!.openDrawer();
+        },
+        child: CircleAvatar(
+          radius: 25,
+          backgroundImage: AssetImage(image),
+          backgroundColor: Colors.grey,
         ),
       ),
       actions: [
@@ -52,7 +45,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
           onPressed: () {},
           icon: const Icon(
             FontAwesomeIcons.solidMessage,
-            color: Colors.white70,
+            color: Colors.white,
           ),
         ),
       ],
