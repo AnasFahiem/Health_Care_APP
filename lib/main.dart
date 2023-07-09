@@ -1,4 +1,5 @@
 import 'package:fittech_app/screeens/Login_screen.dart';
+import 'package:fittech_app/screeens/home_bage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -14,7 +15,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
+      theme: ThemeData.light().copyWith(
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.teal,
+          elevation: 0,
+          centerTitle: true,
+          titleTextStyle: TextStyle(
+            color: Colors.white70,
+            fontSize: 20,
+            fontFamily: GoogleFonts.antic().fontFamily,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         textTheme:
             GoogleFonts.alikeAngularTextTheme(Theme.of(context).textTheme),
         primaryColor: Colors.teal,
@@ -29,6 +41,9 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: LoginScreen(),
+      routes: {
+        HomeBage.routeName: (ctx) => HomeBage(),
+      },
     );
   }
 }
