@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
+  static const routeName = '/login-screen';
 
   @override
   Widget build(BuildContext context) {

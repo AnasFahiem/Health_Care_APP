@@ -17,18 +17,22 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: false,
-      title: Padding(
-        padding: const EdgeInsets.only(bottom: 20),
-        child: Text(
-          name,
-          style: GoogleFonts.roboto(
-            textStyle: const TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+      title: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            name,
+            style: GoogleFonts.roboto(
+              textStyle: const TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
-        ),
+          SizedBox(width: MediaQuery.of(context).size.width * 0.01),
+          Icon(Icons.verified, color: Colors.yellow, size: 15)
+        ],
       ),
       leading: GestureDetector(
         onTap: () {

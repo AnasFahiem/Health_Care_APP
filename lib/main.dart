@@ -43,6 +43,7 @@ class MyApp extends StatelessWidget {
       home: LoginScreen(),
       routes: {
         HomeBage.routeName: (ctx) => HomeBage(),
+        LoginScreen.routeName: (ctx) => LoginScreen(),
       },
     );
   }
