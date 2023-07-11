@@ -130,8 +130,11 @@ class LoginScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      TextButton(
-                        onPressed: () {},
+                      SizedBox(
+                        height: 20,
+                      ),
+                      GestureDetector(
+                        onTap: () {},
                         child: Text(
                           "Forget Password",
                           style: TextStyle(

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// ignore: must_be_immutable
 class DrawerWidget extends StatefulWidget {
   DrawerWidget(
       {super.key,
@@ -39,7 +40,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 100,
+            height: MediaQuery.of(context).size.height * 0.125,
             width: double.infinity,
             decoration: const BoxDecoration(
               color: Colors.teal,
@@ -55,19 +56,19 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   Text(
                     "Fittech",
                     style: GoogleFonts.roboto(
-                      textStyle: const TextStyle(
+                      textStyle: TextStyle(
                         color: Colors.white,
-                        fontSize: 40,
+                        fontSize: MediaQuery.of(context).size.width * 0.11,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(width: MediaQuery.of(context).size.width * 0.02),
-                  const Icon(
+                  Icon(
                     FontAwesomeIcons.heartPulse,
                     color: Colors.white,
-                    size: 40,
+                    size: MediaQuery.of(context).size.width * 0.11,
                   )
                 ],
               ),
@@ -93,9 +94,9 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   children: [
                     Text(widget.name,
                         style: GoogleFonts.roboto(
-                          textStyle: const TextStyle(
+                          textStyle: TextStyle(
                             color: Colors.white,
-                            fontSize: 20,
+                            fontSize: MediaQuery.of(context).size.width * 0.06,
                             fontWeight: FontWeight.bold,
                           ),
                         )),
@@ -130,7 +131,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   ),
                 ),
                 const Padding(
-                  padding: EdgeInsets.only(left: 0, right: 100),
+                  padding: EdgeInsets.only(left: 0, right: 86),
                   child: Divider(
                     color: Colors.teal,
                     thickness: 1,
@@ -228,7 +229,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                     ),
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.width * .62),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.38),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
