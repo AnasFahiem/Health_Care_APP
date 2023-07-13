@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:fittech_app/widgets/app_bar.dart';
 import 'package:fittech_app/widgets/drawer.dart';
 import 'package:flutter/material.dart';
@@ -24,19 +26,20 @@ class HomeBage extends StatelessWidget {
           isSwitched: false,
         ),
         appBar: AppBarWidget(
-          name: "Anas",
+          name: "Anas Fahiem",
           scaffoldKey: _scaffoldKey,
           image: "assets/me.jpg",
         ),
         body: const TabBarView(
           children: [
-            // PostsScreen(),
-            // PostsScreen(),
-            // PostsScreen(),
-            // PostsScreen(),
-            // PostsScreen(),
+            PostsScreen(),
+            PostsScreen(),
+            PostsScreen(),
+            PostsScreen(),
+            PostsScreen(),
           ],
         ),
+
         bottomNavigationBar: const TabBar(
           tabs: [
             Tab(
@@ -53,14 +56,16 @@ class HomeBage extends StatelessWidget {
             ),
             Tab(
               icon: Icon(
-                Icons.add_box_rounded,
+                Icons.add_box_outlined,
                 color: Colors.teal,
+                size: 40,
               ),
             ),
             Tab(
               icon: Icon(
-                FontAwesomeIcons.personCirclePlus,
+                FontAwesomeIcons.userPlus,
                 color: Colors.teal,
+                size: 20,
               ),
             ),
             Tab(

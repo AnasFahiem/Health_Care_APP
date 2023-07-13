@@ -52,6 +52,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             child: Padding(
               padding: const EdgeInsets.only(top: 20, left: 30, bottom: 20),
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
                     "Fittech",
@@ -68,7 +69,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   Icon(
                     FontAwesomeIcons.heartPulse,
                     color: Colors.white,
-                    size: MediaQuery.of(context).size.width * 0.11,
+                    size: MediaQuery.of(context).size.width * 0.105,
                   )
                 ],
               ),
@@ -83,7 +84,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     CircleAvatar(
-                      radius: 40,
+                      radius: MediaQuery.of(context).size.width * 0.1,
                       backgroundImage: AssetImage(widget.image),
                       backgroundColor: Colors.teal,
                     ),

@@ -8,7 +8,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       required this.name,
       required this.scaffoldKey,
       required this.image});
-  Size get preferredSize => const Size.fromHeight(50);
+  Size get preferredSize => const Size.fromHeight(60);
   final String image;
   final String name;
   final GlobalKey<ScaffoldState> scaffoldKey;
@@ -17,7 +17,18 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: false,
+      leading: GestureDetector(
+        onTap: () {
+          scaffoldKey.currentState!.openDrawer();
+        },
+        child: CircleAvatar(
+          radius: 25,
+          backgroundImage: AssetImage(image),
+          backgroundColor: Colors.grey,
+        ),
+      ),
       title: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
@@ -34,21 +45,11 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
           Icon(Icons.verified, color: Colors.yellow, size: 15)
         ],
       ),
-      leading: GestureDetector(
-        onTap: () {
-          scaffoldKey.currentState!.openDrawer();
-        },
-        child: CircleAvatar(
-          radius: 25,
-          backgroundImage: AssetImage(image),
-          backgroundColor: Colors.grey,
-        ),
-      ),
       actions: [
         IconButton(
           onPressed: () {},
           icon: const Icon(
-            FontAwesomeIcons.solidMessage,
+            FontAwesomeIcons.facebookMessenger,
             color: Colors.white,
           ),
         ),

@@ -26,11 +26,11 @@ class LoginScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        "Hello",
+                        "Fittech",
                         style: TextStyle(
                             color: Colors.teal,
                             fontSize: MediaQuery.of(context).size.width * .2,
-                            fontFamily: GoogleFonts.antic().fontFamily,
+                            fontFamily: GoogleFonts.roboto().fontFamily,
                             fontWeight: FontWeight.w500),
                       ),
                       SizedBox(
@@ -52,7 +52,7 @@ class LoginScreen extends StatelessWidget {
                     "HEALTH ABOVE ALL",
                     style: TextStyle(
                       color: Colors.teal,
-                      fontFamily: GoogleFonts.antic().fontFamily,
+                      fontFamily: GoogleFonts.roboto().fontFamily,
                       fontWeight: FontWeight.bold,
                       fontSize: MediaQuery.of(context).size.width * .04,
                     ),
@@ -148,7 +148,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 60, left: 5),
+                  padding: const EdgeInsets.only(top: 90, left: 5),
                   child: Row(
                     children: [
                       TextButton(

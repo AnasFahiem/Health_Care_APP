@@ -1,16 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:readmore/readmore.dart';
 
-class PostWidget extends StatelessWidget {
-  const PostWidget(
-      {super.key,
-      required this.name,
-      required this.image,
-      required this.subtitle});
+class PostWidget extends StatefulWidget {
+  PostWidget({
+    super.key,
+    required this.name,
+    required this.image,
+    required this.subtitle,
+    required this.post,
+  });
   final String name;
   final String image;
   final String subtitle;
+  final String post;
+  Icon icon1 = const Icon(
+    FontAwesomeIcons.thumbsUp,
+    color: Colors.teal,
+  );
 
+  @override
+  State<PostWidget> createState() => _PostWidgetState();
+}
+
+class _PostWidgetState extends State<PostWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,106 +34,228 @@ class PostWidget extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Row(
-            children: [
-              Expanded(
-                child: ListTile(
-                  leading: CircleAvatar(
-                    radius: 25,
-                    backgroundImage: AssetImage(image),
-                    backgroundColor: Colors.grey,
-                  ),
-                  title: Text(
-                    name,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+          Padding(
+            padding: const EdgeInsets.all(6.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CircleAvatar(
+                  radius: 25,
+                  backgroundImage: AssetImage(widget.image),
+                  backgroundColor: Colors.grey,
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          widget.name,
+                          style: GoogleFonts.roboto(
+                            textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        const Icon(
+                          Icons.verified,
+                          color: Colors.yellow,
+                          size: 15,
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      widget.subtitle,
+                      style: const TextStyle(
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  width: 8,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(3),
+                  child: GestureDetector(
+                    onTap: () {},
+                    child: Text(
+                      "Follow",
+                      style: GoogleFonts.roboto(
+                        textStyle: const TextStyle(
+                          textBaseline: TextBaseline.alphabetic,
+                          color: Colors.tealAccent,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ),
-                  subtitle: Text(
-                    subtitle,
-                    style: const TextStyle(
-                      color: Colors.grey,
-                    ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 10, left: 10, top: 5),
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.tealAccent,
+                  width: 0.5,
+                ),
+              ),
+              child: ReadMoreText(
+                widget.post,
+                trimLines: 5,
+                colorClickableText: Colors.teal,
+                trimMode: TrimMode.Line,
+                trimCollapsedText: '...Show more',
+                trimExpandedText: ' show less',
+                moreStyle: GoogleFonts.roboto(
+                  textStyle: const TextStyle(
+                    color: Colors.teal,
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-              ),
-              const Expanded(
-                child: Text(
-                  "Follow",
-                  style: TextStyle(
-                      color: Colors.white,
-                      decoration: TextDecoration.underline,
-                      fontSize: 10),
-                ),
-              ),
-            ],
-          ),
-          const Padding(
-            padding: EdgeInsets.only(
-              top: 10,
-            ),
-            child: Expanded(
-              child: Text(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget aliquam ultricies, nunc nisl ultricies nunc, vitae ultricies nisl nisl eget nisl. Donec euismod, nisl eget aliquam ultricies, nunc nisl ultricies nunc, vitae ultricies nisl nisl eget nisl.",
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ),
-          const Row(
-            children: [
-              Expanded(
-                  child: Icon(FontAwesomeIcons.thumbsUp, color: Colors.white)),
-              SizedBox(
-                width: 5,
-              ),
-              Expanded(
-                child: Text(
-                  "1.5k",
-                  style: TextStyle(
+                textAlign: TextAlign.start,
+                style: GoogleFonts.roboto(
+                  textStyle: const TextStyle(
                     color: Colors.white,
+                    fontSize: 15,
                   ),
                 ),
               ),
-              Expanded(
-                child: Text(
-                  "View all 10 comments",
-                  style: TextStyle(
-                    color: Colors.grey,
-                  ),
+            ),
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              const SizedBox(
+                width: 8,
+              ),
+              const Icon(
+                FontAwesomeIcons.solidThumbsUp,
+                color: Colors.teal,
+                size: 18,
+              ),
+              const SizedBox(
+                width: 8,
+              ),
+              Text(
+                "1.5k",
+                style: GoogleFonts.roboto(
+                  textStyle: const TextStyle(
+                      color: Colors.teal,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Expanded(
-                child: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    FontAwesomeIcons.thumbsUp,
-                    color: Colors.teal,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      if (widget.icon1 ==
+                          const Icon(
+                            FontAwesomeIcons.thumbsUp,
+                            color: Colors.teal,
+                          )) {
+                        widget.icon1 = const Icon(
+                          FontAwesomeIcons.solidThumbsUp,
+                          color: Colors.teal,
+                        );
+                      }
+                    });
+                  },
+                  child: Row(
+                    children: [
+                      widget.icon1,
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        "Like",
+                        style: GoogleFonts.roboto(
+                          textStyle: const TextStyle(
+                            color: Colors.teal,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
-              Expanded(
-                child: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.comment,
-                    color: Colors.teal,
-                  ),
+              GestureDetector(
+                onTap: () {},
+                child: Row(
+                  children: [
+                    const Icon(
+                      FontAwesomeIcons.comment,
+                      color: Colors.teal,
+                    ),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    Text(
+                      "Comment",
+                      style: GoogleFonts.roboto(
+                        textStyle: const TextStyle(
+                          color: Colors.teal,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              Expanded(
-                child: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.share,
-                    color: Colors.teal,
+              Padding(
+                padding: const EdgeInsets.only(right: 8),
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Row(
+                    children: [
+                      const Icon(
+                        Icons.share_outlined,
+                        color: Colors.teal,
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        "Share",
+                        style: GoogleFonts.roboto(
+                          textStyle: const TextStyle(
+                            color: Colors.teal,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
