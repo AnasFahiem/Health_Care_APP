@@ -1,17 +1,11 @@
-import 'dart:ffi';
-
 import 'package:fittech_app/screeens/search_screen.dart';
-import 'package:fittech_app/widgets/app_bar.dart';
 import 'package:fittech_app/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-import '../widgets/post.dart';
 import 'posts_screen.dart';
 
 class HomeBage extends StatelessWidget {
-  HomeBage({super.key});
+  const HomeBage({super.key});
   static const routeName = '/home-bage';
   // final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
@@ -34,7 +28,7 @@ class HomeBage extends StatelessWidget {
         body: TabBarView(
           children: [
             PostsScreen(),
-            SearchScreen(),
+            const SearchScreen(),
             PostsScreen(),
             PostsScreen(),
             PostsScreen(),

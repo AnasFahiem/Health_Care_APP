@@ -3,18 +3,21 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:readmore/readmore.dart';
 
+// ignore: must_be_immutable
 class PostWidget extends StatefulWidget {
   PostWidget({
     super.key,
     required this.name,
-    required this.image,
+    @required this.image,
     required this.subtitle,
-    required this.post,
+    @required this.post,
+    required this.postImage,
   });
   final String name;
-  final String image;
+  String? image;
   final String subtitle;
-  final String post;
+  String? post;
+  final String postImage;
   Icon icon1 = const Icon(
     FontAwesomeIcons.thumbsUp,
     color: Colors.teal,
@@ -41,7 +44,7 @@ class _PostWidgetState extends State<PostWidget> {
               children: [
                 CircleAvatar(
                   radius: 25,
-                  backgroundImage: AssetImage(widget.image),
+                  backgroundImage: AssetImage(widget.image!),
                   backgroundColor: Colors.grey,
                 ),
                 const SizedBox(
@@ -77,8 +80,11 @@ class _PostWidgetState extends State<PostWidget> {
                     ),
                     Text(
                       widget.subtitle,
-                      style: const TextStyle(
-                        color: Colors.grey,
+                      style: GoogleFonts.roboto(
+                        textStyle: const TextStyle(
+                          color: Colors.grey,
+                          fontSize: 12,
+                        ),
                       ),
                     ),
                   ],
@@ -116,27 +122,38 @@ class _PostWidgetState extends State<PostWidget> {
                   width: 0.5,
                 ),
               ),
-              child: ReadMoreText(
-                widget.post,
-                trimLines: 5,
-                colorClickableText: Colors.teal,
-                trimMode: TrimMode.Line,
-                trimCollapsedText: '...Show more',
-                trimExpandedText: ' show less',
-                moreStyle: GoogleFonts.roboto(
-                  textStyle: const TextStyle(
-                    color: Colors.teal,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
+              child: Column(
+                children: [
+                  ReadMoreText(
+                    widget.post!,
+                    textDirection: TextDirection.ltr,
+                    trimLines: 3,
+                    colorClickableText: Colors.teal,
+                    trimMode: TrimMode.Line,
+                    trimCollapsedText: '..Show more',
+                    trimExpandedText: ' show less',
+                    moreStyle: GoogleFonts.roboto(
+                      textStyle: const TextStyle(
+                        color: Colors.teal,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    textAlign: TextAlign.start,
+                    style: GoogleFonts.roboto(
+                      textStyle: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                      ),
+                    ),
                   ),
-                ),
-                textAlign: TextAlign.start,
-                style: GoogleFonts.roboto(
-                  textStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 15,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: CircleAvatar(
+                        backgroundImage: AssetImage(widget.postImage),
+                        radius: 150),
                   ),
-                ),
+                ],
               ),
             ),
           ),

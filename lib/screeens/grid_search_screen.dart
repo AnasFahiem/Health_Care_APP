@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../data/Categories.dart';
-import '../widgets/grid_search_item.dart';
 
 class GridSearchScreen extends StatelessWidget {
   const GridSearchScreen({super.key});
