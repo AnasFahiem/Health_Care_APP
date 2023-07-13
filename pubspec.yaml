@@ -72,6 +72,10 @@ flutter:
     - assets/person5.png
     - assets/me.jpg
     - assets/to5y.jpg
+    - assets/caloriesCalc.png
+    - assets/nutrition.png
+    - assets/suplementStore.png
+    - assets/workout.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

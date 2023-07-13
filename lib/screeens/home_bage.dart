@@ -1,5 +1,6 @@
 import 'dart:ffi';
 
+import 'package:fittech_app/screeens/search_screen.dart';
 import 'package:fittech_app/widgets/app_bar.dart';
 import 'package:fittech_app/widgets/drawer.dart';
 import 'package:flutter/material.dart';
@@ -12,28 +13,28 @@ import 'posts_screen.dart';
 class HomeBage extends StatelessWidget {
   HomeBage({super.key});
   static const routeName = '/home-bage';
-  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  // final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 5,
       child: Scaffold(
-        key: _scaffoldKey,
+        // key: _scaffoldKey,
         drawer: DrawerWidget(
           name: "C. Anas Fahiem",
           image: "assets/me.jpg",
           isSwitched: false,
         ),
-        appBar: AppBarWidget(
-          name: "Anas Fahiem",
-          scaffoldKey: _scaffoldKey,
-          image: "assets/me.jpg",
-        ),
-        body: const TabBarView(
+        // appBar: AppBarWidget(
+        //   name: "Anas Fahiem",
+        //   scaffoldKey: _scaffoldKey,
+        //   image: "assets/me.jpg",
+        // ),
+        body: TabBarView(
           children: [
             PostsScreen(),
-            PostsScreen(),
+            SearchScreen(),
             PostsScreen(),
             PostsScreen(),
             PostsScreen(),
