@@ -1,21 +1,23 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import '../widgets/grid_search_item.dart';
 
 List<Widget> categories = [
-  GridSearchItem(
+  const GridSearchItem(
     image: "assets/workout.png",
     title: "Workout",
   ),
-  GridSearchItem(
+  const GridSearchItem(
     image: "assets/nutrition.png",
     title: "Nutrition",
   ),
-  GridSearchItem(
+  const GridSearchItem(
     image: "assets/caloriesCalc.png",
     title: "Calories Calc",
   ),
-  GridSearchItem(
+  const GridSearchItem(
     image: "assets/suplementStore.png",
     title: "Suplement Store",
   ),
+  // GridSearchItem(image: "assets/person5.png", title: "person")
 ];

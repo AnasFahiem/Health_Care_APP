@@ -6,8 +6,7 @@ List<Widget> posts = [
     image: "assets/to5y.jpg",
     name: "C. Adham Elto5y",
     subtitle: "CIT",
-    post:
-        "ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",
+    post: "",
     postImage: "assets/workout.png",
   ),
   PostWidget(
@@ -22,7 +21,7 @@ List<Widget> posts = [
     name: "C. Anas Fahiem",
     subtitle: "CIT3",
     post: "",
-    postImage: "assets/suplementStore.png",
+    postImage: "assets/me.jpg",
   ),
 //   PostWidget(
 //     image: "assets/to5y.jpg",

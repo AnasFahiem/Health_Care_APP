@@ -1,3 +1,4 @@
+import 'package:fittech_app/screeens/add_screen.dart';
 import 'package:fittech_app/screeens/search_screen.dart';
 import 'package:fittech_app/widgets/drawer.dart';
 import 'package:flutter/material.dart';
@@ -29,13 +30,15 @@ class HomeBage extends StatelessWidget {
           children: [
             PostsScreen(),
             const SearchScreen(),
-            PostsScreen(),
+            AddScreen(),
             PostsScreen(),
             PostsScreen(),
           ],
         ),
 
         bottomNavigationBar: const TabBar(
+          indicatorSize: TabBarIndicatorSize.label,
+          indicatorColor: Colors.teal,
           tabs: [
             Tab(
               icon: Icon(

@@ -117,6 +117,7 @@ class _PostWidgetState extends State<PostWidget> {
             child: Container(
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
                 border: Border.all(
                   color: Colors.tealAccent,
                   width: 0.5,
@@ -149,9 +150,11 @@ class _PostWidgetState extends State<PostWidget> {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: CircleAvatar(
-                        backgroundImage: AssetImage(widget.postImage),
-                        radius: 150),
+                    child: Image.asset(widget.postImage),
+                    // CircleAvatar(
+                    //   backgroundImage: AssetImage(widget.postImage),
+                    //   radius: 150,
+                    // ),
                   ),
                 ],
               ),

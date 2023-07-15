@@ -39,6 +39,8 @@ dependencies:
   font_awesome_flutter: ^10.5.0
   flutter_launcher_icons: ^0.13.1
   readmore: ^2.2.0
+  image_picker: ^1.0.1
+  path: ^1.8.3
 
 dev_dependencies:
   flutter_test:
@@ -76,6 +78,7 @@ flutter:
     - assets/nutrition.png
     - assets/suplementStore.png
     - assets/workout.png
+    - assets/Ali.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
