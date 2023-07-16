@@ -28,7 +28,7 @@ class _AddScreenState extends State<AddScreen> {
         title: Text(
           "Create post",
           style: GoogleFonts.roboto(
-            textStyle: TextStyle(
+            textStyle: const TextStyle(
               color: Colors.white,
               fontSize: 20,
               fontWeight: FontWeight.normal,
@@ -60,7 +60,7 @@ class _AddScreenState extends State<AddScreen> {
                     return null;
                   },
                   onSaved: (value) {
-                    // _post = value!;
+                    _post = value!;
                   },
                   style: GoogleFonts.roboto(
                     textStyle: const TextStyle(
@@ -210,12 +210,16 @@ class _AddScreenState extends State<AddScreen> {
         posts.add(PostWidget(
           name: "Anas Fahiem",
           image: "assets/me.jpg",
-          post: _post,
-          postImage: _media.toString(),
+          post: _post!,
+          postImageFile: _media!,
           subtitle: "2h ago",
         ));
       });
-      Navigator.of(context).pushNamed(PostsScreen.routeName);
+      TabBarView(
+        children: [
+          PostsScreen(),
+        ],
+      );
     }
   }
 }

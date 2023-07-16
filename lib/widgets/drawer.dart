@@ -1,3 +1,4 @@
+import 'package:fittech_app/screeens/help_screen.dart';
 import 'package:fittech_app/screeens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -230,12 +231,15 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                     ),
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.38),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.36),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context)
+                            .pushReplacementNamed(HelpScreen.routeName);
+                      },
                       child: Text(
                         "Help",
                         style: GoogleFonts.roboto(

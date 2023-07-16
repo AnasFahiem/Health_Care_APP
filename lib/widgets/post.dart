@@ -1,3 +1,4 @@
+import 'package:fittech_app/widgets/bottom_post_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -43,73 +44,88 @@ class _PostWidgetState extends State<PostWidget> {
           Padding(
             padding: const EdgeInsets.all(6.0),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CircleAvatar(
-                  radius: 25,
-                  backgroundImage: AssetImage(widget.image!),
-                  backgroundColor: Colors.grey,
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                Column(
+                Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
+                    CircleAvatar(
+                      radius: 25,
+                      backgroundImage: AssetImage(widget.image!),
+                      backgroundColor: Colors.grey,
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          widget.name!,
-                          style: GoogleFonts.roboto(
-                            textStyle: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
+                        Row(
+                          children: [
+                            Text(
+                              widget.name!,
+                              style: GoogleFonts.roboto(
+                                textStyle: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ),
-                          ),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            const Icon(
+                              Icons.verified,
+                              color: Colors.yellow,
+                              size: 15,
+                            ),
+                          ],
                         ),
                         const SizedBox(
-                          width: 5,
+                          height: 5,
                         ),
-                        const Icon(
-                          Icons.verified,
-                          color: Colors.yellow,
-                          size: 15,
+                        Text(
+                          widget.subtitle!,
+                          style: GoogleFonts.roboto(
+                            textStyle: const TextStyle(
+                              color: Colors.grey,
+                              fontSize: 12,
+                            ),
+                          ),
                         ),
                       ],
                     ),
                     const SizedBox(
-                      height: 5,
+                      width: 8,
                     ),
-                    Text(
-                      widget.subtitle!,
-                      style: GoogleFonts.roboto(
-                        textStyle: const TextStyle(
-                          color: Colors.grey,
-                          fontSize: 12,
+                    Padding(
+                      padding: const EdgeInsets.all(3),
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: Text(
+                          "Follow",
+                          style: GoogleFonts.roboto(
+                            textStyle: const TextStyle(
+                              textBaseline: TextBaseline.alphabetic,
+                              color: Colors.tealAccent,
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(
-                  width: 8,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(3),
-                  child: GestureDetector(
-                    onTap: () {},
-                    child: Text(
-                      "Follow",
-                      style: GoogleFonts.roboto(
-                        textStyle: const TextStyle(
-                          textBaseline: TextBaseline.alphabetic,
-                          color: Colors.tealAccent,
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
+                GestureDetector(
+                  onTap: () {
+                    _showBottomSheet();
+                  },
+                  child: const Icon(
+                    Icons.more_horiz,
+                    color: Colors.white,
                   ),
                 ),
               ],
@@ -288,6 +304,16 @@ class _PostWidgetState extends State<PostWidget> {
           ),
         ],
       ),
+    );
+  }
+
+  void _showBottomSheet() {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return BottomSheetpost();
+      },
+      backgroundColor: Colors.transparent,
     );
   }
 }
