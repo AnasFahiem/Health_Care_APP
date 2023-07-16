@@ -1,5 +1,6 @@
 import 'package:fittech_app/screeens/login_screen.dart';
 import 'package:fittech_app/screeens/home_bage.dart';
+import 'package:fittech_app/screeens/posts_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
       routes: {
         HomeBage.routeName: (ctx) => HomeBage(),
         LoginScreen.routeName: (ctx) => LoginScreen(),
+        PostsScreen.routeName: (ctx) => PostsScreen(),
       },
     );
   }

@@ -2,22 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:readmore/readmore.dart';
+import 'dart:io';
 
 // ignore: must_be_immutable
 class PostWidget extends StatefulWidget {
   PostWidget({
     super.key,
-    required this.name,
+    @required this.name,
     @required this.image,
-    required this.subtitle,
+    @required this.subtitle,
     @required this.post,
-    required this.postImage,
+    @required this.postImage,
+    @required this.postImageFile,
   });
-  final String name;
+  String? name;
   String? image;
-  final String subtitle;
+  String? subtitle;
   String? post;
-  final String postImage;
+  String? postImage;
+  File? postImageFile;
   Icon icon1 = const Icon(
     FontAwesomeIcons.thumbsUp,
     color: Colors.teal,
@@ -56,7 +59,7 @@ class _PostWidgetState extends State<PostWidget> {
                     Row(
                       children: [
                         Text(
-                          widget.name,
+                          widget.name!,
                           style: GoogleFonts.roboto(
                             textStyle: const TextStyle(
                               color: Colors.white,
@@ -79,7 +82,7 @@ class _PostWidgetState extends State<PostWidget> {
                       height: 5,
                     ),
                     Text(
-                      widget.subtitle,
+                      widget.subtitle!,
                       style: GoogleFonts.roboto(
                         textStyle: const TextStyle(
                           color: Colors.grey,
@@ -150,7 +153,9 @@ class _PostWidgetState extends State<PostWidget> {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Image.asset(widget.postImage),
+                    child: widget.postImage != null
+                        ? Image.asset(widget.postImage!)
+                        : Image.file(widget.postImageFile!),
                     // CircleAvatar(
                     //   backgroundImage: AssetImage(widget.postImage),
                     //   radius: 150,

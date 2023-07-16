@@ -1,4 +1,7 @@
 import 'dart:io';
+import 'package:fittech_app/data/posts.dart';
+import 'package:fittech_app/screeens/posts_screen.dart';
+import 'package:fittech_app/widgets/post.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,6 +16,8 @@ class AddScreen extends StatefulWidget {
 
 class _AddScreenState extends State<AddScreen> {
   File? _media;
+  final _formKey = GlobalKey<FormState>();
+  String? _post = "";
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +38,9 @@ class _AddScreenState extends State<AddScreen> {
         actions: [
           IconButton(
             icon: Icon(FontAwesomeIcons.check),
-            onPressed: () {},
+            onPressed: () {
+              _save(context);
+            },
             color: Colors.tealAccent,
           )
         ],
@@ -43,24 +50,36 @@ class _AddScreenState extends State<AddScreen> {
           children: [
             Container(
               height: mediaquery.height * .3,
-              child: TextFormField(
-                style: GoogleFonts.roboto(
-                  textStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.normal,
-                  ),
-                ),
-                maxLines: 200,
-                decoration: InputDecoration(
-                  enabledBorder: InputBorder.none,
-                  border: InputBorder.none,
-                  hintText: "What's in your mind ?",
-                  hintStyle: GoogleFonts.roboto(
+              child: Form(
+                key: _formKey,
+                child: TextFormField(
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return "Please enter your post";
+                    }
+                    return null;
+                  },
+                  onSaved: (value) {
+                    // _post = value!;
+                  },
+                  style: GoogleFonts.roboto(
                     textStyle: const TextStyle(
-                      color: Colors.white54,
+                      color: Colors.white,
                       fontSize: 20,
                       fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                  maxLines: 200,
+                  decoration: InputDecoration(
+                    enabledBorder: InputBorder.none,
+                    border: InputBorder.none,
+                    hintText: "What's in your mind ?",
+                    hintStyle: GoogleFonts.roboto(
+                      textStyle: const TextStyle(
+                        color: Colors.white54,
+                        fontSize: 20,
+                        fontWeight: FontWeight.normal,
+                      ),
                     ),
                   ),
                 ),
@@ -180,6 +199,23 @@ class _AddScreenState extends State<AddScreen> {
       setState(() {
         _media = File(pickedFile.path);
       });
+    }
+  }
+
+  void _save(context) {
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
+
+      setState(() {
+        posts.add(PostWidget(
+          name: "Anas Fahiem",
+          image: "assets/me.jpg",
+          post: _post,
+          postImage: _media.toString(),
+          subtitle: "2h ago",
+        ));
+      });
+      Navigator.of(context).pushNamed(PostsScreen.routeName);
     }
   }
 }
