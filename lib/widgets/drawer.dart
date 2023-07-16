@@ -231,7 +231,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                     ),
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.36),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.34),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
