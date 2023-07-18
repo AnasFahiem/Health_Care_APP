@@ -30,7 +30,14 @@ class MyApp extends StatelessWidget {
           ),
         ),
         textTheme:
-            GoogleFonts.alikeAngularTextTheme(Theme.of(context).textTheme),
+            GoogleFonts.robotoTextTheme(Theme.of(context).textTheme).copyWith(
+          bodyText1: TextStyle(
+            color: Colors.white70,
+            fontSize: 20,
+            fontFamily: GoogleFonts.roboto().fontFamily,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         primaryColor: Colors.teal,
         scaffoldBackgroundColor: Color.fromARGB(255, 26, 26, 26),
         colorScheme: ColorScheme.fromSeed(

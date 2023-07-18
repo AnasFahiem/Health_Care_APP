@@ -36,7 +36,7 @@ class _PostWidgetState extends State<PostWidget> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.grey[900],
+        color: Color.fromARGB(255, 26, 26, 26),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
@@ -136,6 +136,7 @@ class _PostWidgetState extends State<PostWidget> {
             child: Container(
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
+                color: Colors.grey[900],
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(
                   color: Colors.tealAccent,
@@ -216,18 +217,23 @@ class _PostWidgetState extends State<PostWidget> {
                 padding: const EdgeInsets.all(8.0),
                 child: GestureDetector(
                   onTap: () {
-                    setState(() {
-                      if (widget.icon1 ==
-                          const Icon(
-                            FontAwesomeIcons.thumbsUp,
+                    setState(
+                      () {
+                        if (widget.icon1 == widget.icon1) {
+                          widget.icon1 = const Icon(
+                            FontAwesomeIcons.solidThumbsUp,
                             color: Colors.teal,
-                          )) {
-                        widget.icon1 = const Icon(
-                          FontAwesomeIcons.solidThumbsUp,
-                          color: Colors.teal,
-                        );
-                      }
-                    });
+                          );
+                        } else {
+                          setState(() {
+                            widget.icon1 = const Icon(
+                              FontAwesomeIcons.thumbsUp,
+                              color: Colors.teal,
+                            );
+                          });
+                        }
+                      },
+                    );
                   },
                   child: Row(
                     children: [

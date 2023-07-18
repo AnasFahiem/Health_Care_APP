@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:fittech_app/data/posts.dart';
-import 'package:fittech_app/screeens/posts_screen.dart';
+import 'package:fittech_app/screeens/home_bage.dart';
 import 'package:fittech_app/widgets/post.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -9,6 +9,7 @@ import 'package:image_picker/image_picker.dart';
 
 class AddScreen extends StatefulWidget {
   const AddScreen({super.key});
+  static const routeName = "/add-screen";
 
   @override
   State<AddScreen> createState() => _AddScreenState();
@@ -206,19 +207,19 @@ class _AddScreenState extends State<AddScreen> {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
 
-      setState(() {
-        posts.add(PostWidget(
-          name: "Anas Fahiem",
-          image: "assets/me.jpg",
-          post: _post!,
-          postImageFile: _media!,
-          subtitle: "2h ago",
-        ));
-      });
-      TabBarView(
-        children: [
-          PostsScreen(),
-        ],
+      setState(
+        () {
+          posts.add(
+            PostWidget(
+              name: "Anas Fahiem",
+              image: "assets/me.jpg",
+              post: _post!,
+              postImageFile: _media!,
+              subtitle: "2h ago",
+            ),
+          );
+          Navigator.of(context).pushReplacementNamed(HomeBage.routeName);
+        },
       );
     }
   }
