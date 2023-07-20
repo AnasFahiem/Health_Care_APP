@@ -13,7 +13,7 @@ List<Widget> categories = [
   ),
   const GridSearchItem(
     image: "assets/caloriesCalc.png",
-    title: "Calories Calc",
+    title: "Fitness Calc",
   ),
   const GridSearchItem(
     image: "assets/suplementStore.png",

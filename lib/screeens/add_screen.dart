@@ -38,7 +38,7 @@ class _AddScreenState extends State<AddScreen> {
         ),
         actions: [
           IconButton(
-            icon: Icon(FontAwesomeIcons.check),
+            icon: const Icon(FontAwesomeIcons.check),
             onPressed: () {
               _save(context);
             },
@@ -87,7 +87,7 @@ class _AddScreenState extends State<AddScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               child: Stack(
                 alignment: Alignment.topRight,
                 children: [
@@ -116,7 +116,7 @@ class _AddScreenState extends State<AddScreen> {
                     elevation: 0,
                     backgroundColor: Colors.transparent,
                     child: _media != null
-                        ? Icon(
+                        ? const Icon(
                             Icons.delete,
                             color: Colors.red,
                           )
@@ -132,22 +132,24 @@ class _AddScreenState extends State<AddScreen> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton.small(
+            heroTag: "btn1",
             onPressed: _takePhoto,
-            backgroundColor: Color.fromARGB(255, 21, 21, 21),
+            backgroundColor: const Color.fromARGB(255, 21, 21, 21),
             elevation: 5,
-            child: Icon(
+            child: const Icon(
               Icons.add_a_photo_outlined,
               color: Colors.white,
               size: 20,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           FloatingActionButton(
+            heroTag: "btn2",
             onPressed: _pickPhoto,
             backgroundColor: Colors.teal,
-            child: Icon(
+            child: const Icon(
               Icons.add_photo_alternate_outlined,
               color: Colors.white,
             ),
@@ -209,7 +211,8 @@ class _AddScreenState extends State<AddScreen> {
 
       setState(
         () {
-          posts.add(
+          posts.insert(
+            0,
             PostWidget(
               name: "Anas Fahiem",
               image: "assets/me.jpg",

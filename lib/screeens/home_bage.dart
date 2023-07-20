@@ -2,8 +2,7 @@ import 'package:fittech_app/screeens/add_screen.dart';
 import 'package:fittech_app/screeens/search_screen.dart';
 import 'package:fittech_app/widgets/drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../widgets/bottom_bar.dart';
+import 'fav_screen.dart';
 import 'posts_screen.dart';
 
 class HomeBage extends StatefulWidget {
@@ -22,7 +21,7 @@ class _HomeBageState extends State<HomeBage> {
     PostsScreen(),
     const SearchScreen(),
     const AddScreen(),
-    PostsScreen(),
+    const FavScreen(),
     PostsScreen(),
   ];
   @override
@@ -74,8 +73,8 @@ class _HomeBageState extends State<HomeBage> {
           ),
           NavigationDestination(
             tooltip: "",
-            icon: Icon(Icons.person_add_outlined),
-            selectedIcon: Icon(Icons.person_add),
+            icon: Icon(Icons.star_border_outlined),
+            selectedIcon: Icon(Icons.star),
             label: 'Freinds',
           ),
           NavigationDestination(
