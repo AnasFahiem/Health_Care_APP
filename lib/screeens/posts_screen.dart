@@ -13,7 +13,7 @@ class PostsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      backgroundColor: Color.fromARGB(255, 26, 26, 26),
+      backgroundColor: const Color.fromARGB(255, 26, 26, 26),
       drawer: DrawerWidget(
         name: "C. Anas Fahiem",
         image: "assets/me.jpg",

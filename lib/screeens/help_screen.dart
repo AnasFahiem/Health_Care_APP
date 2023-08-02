@@ -21,7 +21,7 @@ class HelpScreen extends StatelessWidget {
             Text(
               "For More Designs Contact Me At:",
               style: GoogleFonts.roboto(
-                textStyle: TextStyle(
+                textStyle: const TextStyle(
                   color: Colors.teal,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -36,7 +36,7 @@ class HelpScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(
+                  const Icon(
                     FontAwesomeIcons.linkedin,
                     color: Colors.blue,
                   ),
@@ -44,7 +44,7 @@ class HelpScreen extends StatelessWidget {
                   Text(
                     "Anas Elkholy",
                     style: GoogleFonts.roboto(
-                      textStyle: TextStyle(
+                      textStyle: const TextStyle(
                         color: Colors.teal,
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
@@ -62,7 +62,7 @@ class HelpScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(
+                  const Icon(
                     FontAwesomeIcons.facebook,
                     color: Colors.blue,
                   ),
@@ -70,7 +70,7 @@ class HelpScreen extends StatelessWidget {
                   Text(
                     "Anas Elkholy",
                     style: GoogleFonts.roboto(
-                      textStyle: TextStyle(
+                      textStyle: const TextStyle(
                         color: Colors.teal,
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
@@ -88,7 +88,7 @@ class HelpScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(
+                  const Icon(
                     FontAwesomeIcons.twitter,
                     color: Colors.blue,
                   ),
@@ -96,7 +96,7 @@ class HelpScreen extends StatelessWidget {
                   Text(
                     "@anas_fahiem",
                     style: GoogleFonts.roboto(
-                      textStyle: TextStyle(
+                      textStyle: const TextStyle(
                         color: Colors.teal,
                         fontSize: 15,
                         fontWeight: FontWeight.bold,

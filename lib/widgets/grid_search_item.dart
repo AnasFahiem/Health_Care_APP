@@ -38,7 +38,7 @@ class GridSearchItem extends StatelessWidget {
                     fontSize: 20,
                     fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 6,
               )
             ],

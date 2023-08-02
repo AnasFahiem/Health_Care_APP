@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         ),
         textTheme:
             GoogleFonts.robotoTextTheme(Theme.of(context).textTheme).copyWith(
-          bodyText1: TextStyle(
+          bodyLarge: TextStyle(
             color: Colors.white70,
             fontSize: 20,
             fontFamily: GoogleFonts.roboto().fontFamily,
@@ -39,20 +39,20 @@ class MyApp extends StatelessWidget {
           ),
         ),
         primaryColor: Colors.teal,
-        scaffoldBackgroundColor: Color.fromARGB(255, 26, 26, 26),
+        scaffoldBackgroundColor: const Color.fromARGB(255, 26, 26, 26),
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Color.fromARGB(255, 4, 156, 103),
+          seedColor: const Color.fromARGB(255, 4, 156, 103),
           background: Colors.teal,
           brightness: Brightness.dark,
           primary: Colors.teal,
-          secondary: Color.fromARGB(255, 4, 156, 103),
+          secondary: const Color.fromARGB(255, 4, 156, 103),
           surface: Colors.white70,
         ),
       ),
-      home: LoginScreen(),
+      home: const LoginScreen(),
       routes: {
-        HomeBage.routeName: (ctx) => HomeBage(),
-        LoginScreen.routeName: (ctx) => LoginScreen(),
+        HomeBage.routeName: (ctx) => const HomeBage(),
+        LoginScreen.routeName: (ctx) => const LoginScreen(),
         PostsScreen.routeName: (ctx) => PostsScreen(),
         HelpScreen.routeName: (ctx) => HelpScreen(),
       },

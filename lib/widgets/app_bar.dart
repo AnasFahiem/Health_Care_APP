@@ -8,6 +8,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       required this.name,
       required this.scaffoldKey,
       required this.image});
+  @override
   Size get preferredSize => const Size.fromHeight(60);
   final String image;
   final String name;

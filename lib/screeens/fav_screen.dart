@@ -14,27 +14,27 @@ class FavScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
+            const Icon(
               Icons.star,
               color: Colors.teal,
             ),
-            SizedBox(
+            const SizedBox(
               width: 5,
             ),
             Text(
               "Favourites",
               style: GoogleFonts.roboto(
-                textStyle: TextStyle(
+                textStyle: const TextStyle(
                   color: Colors.teal,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 5,
             ),
-            Icon(
+            const Icon(
               Icons.star,
               color: Colors.teal,
             ),

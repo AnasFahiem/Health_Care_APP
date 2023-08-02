@@ -33,7 +33,7 @@ class LoginScreen extends StatelessWidget {
                             fontFamily: GoogleFonts.roboto().fontFamily,
                             fontWeight: FontWeight.w500),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 8,
                       ),
                       Icon(
@@ -45,7 +45,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(
+                  padding: const EdgeInsets.only(
                     left: 170,
                   ),
                   child: Text(
@@ -58,7 +58,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 100,
                 ),
                 Padding(
@@ -73,7 +73,7 @@ class LoginScreen extends StatelessWidget {
                         ),
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
-                            border: OutlineInputBorder(
+                            border: const OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(10))),
                             label: Text(
@@ -85,7 +85,7 @@ class LoginScreen extends StatelessWidget {
                               ),
                             )),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 40,
                       ),
                       TextFormField(
@@ -97,7 +97,7 @@ class LoginScreen extends StatelessWidget {
                         ),
                         keyboardType: TextInputType.visiblePassword,
                         decoration: InputDecoration(
-                          border: OutlineInputBorder(
+                          border: const OutlineInputBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10))),
                           label: Text(
@@ -110,11 +110,11 @@ class LoginScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 40,
                       ),
                       MaterialButton(
-                        shape: StadiumBorder(),
+                        shape: const StadiumBorder(),
                         color: Colors.teal,
                         onPressed: () {
                           Navigator.of(context)
@@ -123,14 +123,14 @@ class LoginScreen extends StatelessWidget {
                         child: Text(
                           "Login",
                           style: TextStyle(
-                            color: Color.fromARGB(255, 26, 26, 26),
+                            color: const Color.fromARGB(255, 26, 26, 26),
                             fontFamily: GoogleFonts.antic().fontFamily,
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       GestureDetector(

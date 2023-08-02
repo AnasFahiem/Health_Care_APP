@@ -13,11 +13,11 @@ class SearchBarWidget extends StatelessWidget implements PreferredSizeWidget {
         maxWidth: MediaQuery.of(context).size.width * 0.8,
       ),
       side: MaterialStateBorderSide.resolveWith(
-          (states) => BorderSide(color: Colors.teal, width: 1)),
+          (states) => const BorderSide(color: Colors.teal, width: 1)),
       hintText: "Search",
       hintStyle: MaterialStateTextStyle.resolveWith(
           (states) => GoogleFonts.poppins(color: Colors.teal[800])),
-      leading: Icon(
+      leading: const Icon(
         Icons.search,
         color: Colors.teal,
         size: 25,

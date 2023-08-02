@@ -6,7 +6,7 @@ import 'fav_screen.dart';
 import 'posts_screen.dart';
 
 class HomeBage extends StatefulWidget {
-  HomeBage({super.key});
+  const HomeBage({super.key});
   static const routeName = '/home-bage';
 
   @override
