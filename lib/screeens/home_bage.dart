@@ -75,7 +75,7 @@ class _HomeBageState extends State<HomeBage> {
             tooltip: "",
             icon: Icon(Icons.star_border_outlined),
             selectedIcon: Icon(Icons.star),
-            label: 'Freinds',
+            label: 'Favorites',
           ),
           NavigationDestination(
             tooltip: "",
