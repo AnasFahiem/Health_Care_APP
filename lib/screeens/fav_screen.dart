@@ -15,35 +15,15 @@ class _FavScreenState extends State<FavScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Icon(
-              Icons.star,
+        title: Text(
+          "Favourites",
+          style: GoogleFonts.roboto(
+            textStyle: const TextStyle(
               color: Colors.teal,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
             ),
-            const SizedBox(
-              width: 5,
-            ),
-            Text(
-              "Favourites",
-              style: GoogleFonts.roboto(
-                textStyle: const TextStyle(
-                  color: Colors.teal,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            const SizedBox(
-              width: 5,
-            ),
-            const Icon(
-              Icons.star,
-              color: Colors.teal,
-            ),
-          ],
+          ),
         ),
         backgroundColor: Colors.transparent,
         actions: [
@@ -68,19 +48,15 @@ class _FavScreenState extends State<FavScreen> {
                 SizedBox(
                   height: 120,
                 ),
-                Container(
-                  child: Image.asset("assets/sad-heart1.png"),
-                  height: 250,
-                  width: 250,
-                ),
-                const SizedBox(
-                  height: 5,
+                Image.asset(
+                  "assets/sad-heart (1).png",
+                  height: MediaQuery.of(context).size.height * 0.3,
                 ),
                 Text(
                   "No Favourites Yet",
                   style: GoogleFonts.roboto(
                     textStyle: TextStyle(
-                      color: const Color.fromARGB(142, 77, 182, 172),
+                      color: Color.fromARGB(153, 77, 182, 172),
                       fontSize: 18,
                       fontWeight: FontWeight.normal,
                     ),

@@ -81,7 +81,10 @@ flutter:
     - assets/workout.png
     - assets/Ali.jpg
     - assets/sad-heart.png
-    - assets/sad-heart1.png
+    - assets/sad-heart (1).png
+    - assets/heart.png
+    - assets/noPosts.png
+    - assets/love-letter.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

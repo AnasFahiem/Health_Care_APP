@@ -19,7 +19,7 @@ class _HomeBageState extends State<HomeBage> {
 
   final List<Widget> screens = [
     PostsScreen(),
-    const SearchScreen(),
+    SearchScreen(),
     const AddScreen(),
     const FavScreen(),
     PostsScreen(),

@@ -23,11 +23,34 @@ class PostsScreen extends StatelessWidget {
           name: "Anas Fahiem",
           scaffoldKey: _scaffoldKey,
           image: "assets/me.jpg"),
-      body: ListView.builder(
-          itemCount: posts.length,
-          itemBuilder: (context, index) {
-            return posts[index];
-          }),
+      body: posts.isEmpty
+          ? Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "assets/noPosts.png",
+                    height: MediaQuery.of(context).size.height * 0.3,
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.02,
+                  ),
+                  Text(
+                    "No Posts Yet",
+                    style: TextStyle(
+                      color: Color.fromARGB(153, 77, 182, 172),
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            )
+          : ListView.builder(
+              itemCount: posts.length,
+              itemBuilder: (context, index) {
+                return posts[index];
+              }),
     );
   }
 }

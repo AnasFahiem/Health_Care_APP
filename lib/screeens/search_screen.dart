@@ -3,18 +3,26 @@ import 'package:fittech_app/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
 
 class SearchScreen extends StatelessWidget {
-  const SearchScreen({super.key});
+  SearchScreen({
+    super.key,
+  });
   static const routeName = "/search-screen";
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
-          leading: const CircleAvatar(
-            radius: 25,
-            backgroundImage: AssetImage("assets/me.jpg"),
-            backgroundColor: Colors.grey,
+          leading: GestureDetector(
+            onTap: () {
+              _scaffoldKey.currentState?.openDrawer();
+            },
+            child: const CircleAvatar(
+              radius: 25,
+              backgroundImage: AssetImage("assets/me.jpg"),
+              backgroundColor: Colors.grey,
+            ),
           ),
           title: const SearchBarWidget(),
           actions: [
