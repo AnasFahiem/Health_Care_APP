@@ -72,6 +72,7 @@ class _AddScreenState extends State<AddScreen> {
                   ),
                   maxLines: 200,
                   decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.all(10),
                     enabledBorder: InputBorder.none,
                     border: InputBorder.none,
                     hintText: "What's in your mind ?",
