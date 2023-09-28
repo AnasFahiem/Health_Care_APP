@@ -85,6 +85,7 @@ flutter:
     - assets/heart.png
     - assets/noPosts.png
     - assets/love-letter.png
+    - assets/icons8-broken-heart.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

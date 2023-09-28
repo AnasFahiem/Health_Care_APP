@@ -1,4 +1,3 @@
-import 'package:fittech_app/widgets/post.dart';
 import 'package:flutter/material.dart';
 
 List<Widget> posts = [
