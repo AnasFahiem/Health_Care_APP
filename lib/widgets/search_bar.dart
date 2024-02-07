@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class SearchBarWidget extends StatelessWidget implements PreferredSizeWidget {
   const SearchBarWidget({super.key});
+  @override
   Size get preferredSize => const Size.fromHeight(50);
 
   @override

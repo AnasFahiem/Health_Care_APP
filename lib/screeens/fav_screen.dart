@@ -45,7 +45,7 @@ class _FavScreenState extends State<FavScreen> {
               child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 120,
                 ),
                 Image.asset(
@@ -55,7 +55,7 @@ class _FavScreenState extends State<FavScreen> {
                 Text(
                   "No Favourites Yet",
                   style: GoogleFonts.roboto(
-                    textStyle: TextStyle(
+                    textStyle: const TextStyle(
                       color: Color.fromARGB(153, 77, 182, 172),
                       fontSize: 18,
                       fontWeight: FontWeight.normal,

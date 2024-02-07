@@ -49,7 +49,7 @@ class _AddScreenState extends State<AddScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
+            SizedBox(
               height: mediaquery.height * .3,
               child: Form(
                 key: _formKey,

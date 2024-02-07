@@ -39,51 +39,51 @@ class ThemesClass {
     primaryColor: Colors.white,
     hintColor: Colors.tealAccent,
     scaffoldBackgroundColor: Colors.white,
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       backgroundColor: Colors.white,
       elevation: 0,
       iconTheme: IconThemeData(
         color: Colors.tealAccent,
       ),
     ),
-    textTheme: TextTheme(
-      bodyText1: TextStyle(
+    textTheme: const TextTheme(
+      bodyLarge: TextStyle(
         color: Colors.black,
       ),
-      bodyText2: TextStyle(
+      bodyMedium: TextStyle(
         color: Colors.black,
       ),
-      headline1: TextStyle(
+      displayLarge: TextStyle(
         color: Colors.black,
       ),
-      headline2: TextStyle(
+      displayMedium: TextStyle(
         color: Colors.black,
       ),
-      headline3: TextStyle(
+      displaySmall: TextStyle(
         color: Colors.black,
       ),
-      headline4: TextStyle(
+      headlineMedium: TextStyle(
         color: Colors.black,
       ),
-      headline5: TextStyle(
+      headlineSmall: TextStyle(
         color: Colors.black,
       ),
-      headline6: TextStyle(
+      titleLarge: TextStyle(
         color: Colors.black,
       ),
-      subtitle1: TextStyle(
+      titleMedium: TextStyle(
         color: Colors.black,
       ),
-      subtitle2: TextStyle(
+      titleSmall: TextStyle(
         color: Colors.black,
       ),
-      button: TextStyle(
+      labelLarge: TextStyle(
         color: Colors.black,
       ),
-      caption: TextStyle(
+      bodySmall: TextStyle(
         color: Colors.black,
       ),
-      overline: TextStyle(
+      labelSmall: TextStyle(
         color: Colors.black,
       ),
     ),

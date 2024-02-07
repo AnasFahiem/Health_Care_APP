@@ -35,7 +35,7 @@ class PostsScreen extends StatelessWidget {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.02,
                   ),
-                  Text(
+                  const Text(
                     "No Posts Yet",
                     style: TextStyle(
                       color: Color.fromARGB(153, 77, 182, 172),

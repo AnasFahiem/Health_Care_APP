@@ -36,7 +36,7 @@ class _PostWidgetState extends State<PostWidget> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 26, 26, 26),
+        color: const Color.fromARGB(255, 26, 26, 26),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
@@ -51,7 +51,7 @@ class _PostWidgetState extends State<PostWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CircleAvatar(
-                      radius: 25,
+                      radius: 24,
                       backgroundImage: AssetImage(widget.image!),
                       backgroundColor: Colors.grey,
                     ),
@@ -317,7 +317,7 @@ class _PostWidgetState extends State<PostWidget> {
     showModalBottomSheet(
       context: context,
       builder: (context) {
-        return BottomSheetpost();
+        return const BottomSheetpost();
       },
       backgroundColor: Colors.transparent,
     );

@@ -163,7 +163,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   ),
                 ),
                 SwitchListTile(
-                  contentPadding: EdgeInsets.only(left: 8),
+                  contentPadding: const EdgeInsets.only(left: 8),
                   inactiveThumbColor: Colors.teal,
                   title: Text(
                     "Dark Mode",

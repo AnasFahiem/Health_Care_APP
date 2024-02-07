@@ -43,7 +43,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
             ),
           ),
           SizedBox(width: MediaQuery.of(context).size.width * 0.01),
-          Icon(Icons.verified, color: Colors.yellow, size: 15)
+          const Icon(Icons.verified, color: Colors.yellow, size: 15)
         ],
       ),
       actions: [

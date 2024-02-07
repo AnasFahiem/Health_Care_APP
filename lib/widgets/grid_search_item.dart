@@ -11,7 +11,7 @@ class GridSearchItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print("${categories.indexOf(this)} ${this.title}");
+        print("${categories.indexOf(this)} $title");
       },
       child: Container(
           decoration: BoxDecoration(

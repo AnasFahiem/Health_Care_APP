@@ -9,6 +9,8 @@ class HomeBage extends StatefulWidget {
   const HomeBage({super.key});
   static const routeName = '/home-bage';
 
+  set index(int index) {}
+
   @override
   State<HomeBage> createState() => _HomeBageState();
 }
